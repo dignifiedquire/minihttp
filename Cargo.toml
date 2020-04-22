@@ -18,5 +18,7 @@ log = "0.4.8"
 
 [dev-dependencies]
 async-std = { path = "../async-std" }  # { git = "https://github.com/async-rs/async-std.git", branch = "master" }
+# async-std = { git = "https://github.com/stjepang/async-std.git" }
+num_cpus = "1.13.0"
+smol = { git = "https://github.com/stjepang/smol.git" }
 tokio = { git = "https://github.com/tokio-rs/tokio.git", features = ["full"] }
-gperftools = {version = "0.2.0", features = ["heap"] }
