@@ -17,3 +17,4 @@ time = "0.1"
 [dev-dependencies]
 async-std = { git = "https://github.com/stjepang/async-std.git", branch = "new-scheduler" }
 tokio = { git = "https://github.com/tokio-rs/tokio.git", features = ["full"] }
+gperftools = {version = "0.2.0", features = ["heap"] }
