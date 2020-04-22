@@ -13,8 +13,10 @@ bytes = "0.4"
 futures = "0.3"
 httparse = "1.1.2"
 time = "0.1"
+femme = { path = "../femme" } #"1.3.0"
+log = "0.4.8"
 
 [dev-dependencies]
-async-std = { git = "https://github.com/stjepang/async-std.git", branch = "new-scheduler" }
+async-std = { path = "../async-std" }  # { git = "https://github.com/async-rs/async-std.git", branch = "master" }
 tokio = { git = "https://github.com/tokio-rs/tokio.git", features = ["full"] }
 gperftools = {version = "0.2.0", features = ["heap"] }

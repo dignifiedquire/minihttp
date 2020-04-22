@@ -28,21 +28,14 @@ async fn process(mut stream: TcpStream) -> io::Result<()> {
 }
 
 fn main() -> io::Result<()> {
-    use gperftools::heap_profiler::HEAP_PROFILER;
+    femme::start(log::LevelFilter::Trace).unwrap();
     task::block_on(async {
         let listener = TcpListener::bind("0.0.0.0:8080").await?;
         let mut incoming = listener.incoming();
 
-        HEAP_PROFILER
-            .lock()
-            .unwrap()
-            .start("./async-std.hprof")
-            .unwrap();
-
         while let Some(stream) = incoming.next().await {
             task::spawn(process(stream?));
         }
-        HEAP_PROFILER.lock().unwrap().stop().unwrap();
         Ok(())
     })
 }
